@@ -10,14 +10,20 @@ trackdata = []
 cplist = [13,20,45,46,72,73,114,115,116,117,118,119,120,200,208] #used for CP counter.
 cpcount = 0
 for i in range(loop):
+    flags = 0
     block = random.randint(1, 292)
+    x = random.randint(0,31)
+    y = random.randint(0,31)
+    z = random.randint(0,31)
+    if y == 0:
+        flags |= 0x1000
     if block == 210: #workaround due to a bug in pygbx
         block = 214
     if block != 14: #avoid putting accidental start points
         if block != 16:
-            trackdata.append((block,random.randint(0,31), random.randint(0,31), random.randint(0,31), random.randint(0,3)))
+            trackdata.append((block, x, y, z, random.randint(0,3), flags))
     if block in cplist:cpcount+=1
-#track data format : [(block, x,y,z,rotation),(...)]
+
 if start == 1:
     trackdata.append((16,random.randint(0,31), random.randint(0,31), random.randint(0,31), random.randint(0,3)))
 else:
