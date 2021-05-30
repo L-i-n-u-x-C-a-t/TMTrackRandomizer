@@ -1,4 +1,5 @@
 from donadigo.savegbx import * #import code made by donadigo (tho i cleaned up unneeded functions)
+import random 
 
 name = str(input("Name of the map : "))
 loop = int(input("Number of blocks : "))
