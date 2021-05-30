@@ -8,7 +8,7 @@ from enum import Enum
 from pygbx import Gbx, GbxType
 from block_utils import BASE_BLOCKS, BID, BROT, BX, BY, BZ, get_block_name
 from pygbx.stadium_blocks import STADIUM_BLOCKS
-from track_utils import populate_flags, rotate_track
+from track_utils import populate_flags
 
 
 CURRENT_VER = 3
