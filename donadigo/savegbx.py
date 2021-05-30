@@ -6,7 +6,7 @@ import lzo
 from enum import Enum
 
 from pygbx import Gbx, GbxType
-from block_utils import BASE_BLOCKS, BID, BROT, BX, BY, BZ, get_block_name
+from donadigo.block_utils import BASE_BLOCKS, BID, BROT, BX, BY, BZ, get_block_name
 from pygbx.stadium_blocks import STADIUM_BLOCKS
 
 
