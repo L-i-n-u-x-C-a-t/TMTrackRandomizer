@@ -8,7 +8,6 @@ from enum import Enum
 from pygbx import Gbx, GbxType
 from block_utils import BASE_BLOCKS, BID, BROT, BX, BY, BZ, get_block_name
 from pygbx.stadium_blocks import STADIUM_BLOCKS
-from track_utils import populate_flags
 
 
 CURRENT_VER = 3
@@ -86,8 +85,6 @@ def save_gbx(options, template, output):
     else:
         print("ERROR 1 - TRACK DATA ERROR")
         return
-
-    track = populate_flags(track)
 
     append_to_store(stored_strings, challenge.map_uid)
     append_to_store(stored_strings, challenge.environment)
