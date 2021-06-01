@@ -2,9 +2,8 @@ from donadigo.savegbx import * #import code made by donadigo (tho i cleaned up u
 import random 
    
     
-def randomize(name,loop,start):
+def randomize(name,loop,start, template):
     output = name + ".Challenge.Gbx"
-    template = "Template.Challenge.Gbx"
     trackdata = []
     cplist = [13,20,45,46,72,73,114,115,116,117,118,119,120,200,208] #used for CP counter.
     cpcount = 0
