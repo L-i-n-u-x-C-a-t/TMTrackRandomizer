@@ -2,6 +2,8 @@ import tkinter as tk
 import tkinter.messagebox as tkmsb
 from tkinter.filedialog import *
 from randomizer import randomize
+from sys import platform
+import os
 
 def send_values():
     loop=int(blocks.get())
@@ -15,7 +17,10 @@ def send_values():
         exit()
     tkmsb.showinfo('TMTrackRandomizer', 'Done! Number of Checkpoints : '+cpnum)
 
-
+#Linux problem...
+if platform == linux:
+    os.environ['DISPLAY'] = "unix$DISPLAY"
+    
 #GUI START
 root = tk.Tk("TMTrackRandomizer")
 text = tk.Label(root, text="Choose the name of your map: ")
