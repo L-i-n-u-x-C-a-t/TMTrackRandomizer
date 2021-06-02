@@ -17,12 +17,10 @@ def send_values():
         exit()
     tkmsb.showinfo('TMTrackRandomizer', 'Done! Number of Checkpoints : '+str(cpnum))
 
-#Linux problem...
-if platform == linux:
-    os.environ['DISPLAY'] = "unix$DISPLAY"
-    
+   
 #GUI START
-root = tk.Tk("TMTrackRandomizer")
+root = tk.Tk()
+root.title("TMTrackRandomizer")
 text = tk.Label(root, text="Choose the name of your map: ")
 text.grid(row=1, column=1)
 string = tk.StringVar() 
