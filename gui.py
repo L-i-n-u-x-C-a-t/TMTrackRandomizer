@@ -15,7 +15,7 @@ def send_values():
     except Exception as e:
         tkmsb.showerror("TMTrackRandomizer", "Error!\n" + str(e) + "\nPlease report this to the developer!")
         exit()
-    tkmsb.showinfo('TMTrackRandomizer', 'Done! Number of Checkpoints : '+cpnum)
+    tkmsb.showinfo('TMTrackRandomizer', 'Done! Number of Checkpoints : '+str(cpnum))
 
 #Linux problem...
 if platform == linux:
