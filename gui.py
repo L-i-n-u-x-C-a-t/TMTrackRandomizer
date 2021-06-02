@@ -2,8 +2,6 @@ import tkinter as tk
 import tkinter.messagebox as tkmsb
 from tkinter.filedialog import *
 from randomizer import randomize
-from sys import platform
-import os
 
 def send_values():
     loop=int(blocks.get())
