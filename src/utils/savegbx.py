@@ -2,11 +2,13 @@ import os
 import pickle
 import struct
 import sys
-import lzo
+
 from enum import Enum
+from zlib import compress
 
 from pygbx import Gbx, GbxType
-from donadigo.block_utils import BASE_BLOCKS, BID, BROT, BX, BY, BZ, get_block_name
+from utils.block_utils import BASE_BLOCKS, BID, BROT, BX, BY, BZ, get_block_name
+from utils.lzo import * #whenever pygbx gets fixed with new lzo version im changing this
 from pygbx.stadium_blocks import STADIUM_BLOCKS
 
 
@@ -134,8 +136,10 @@ def save_gbx(options, template, output):
     if info.valid:
         udata = data_replace(udata, map_name_str, info.pos, info.size)
 
-    compressed = lzo.compress(bytes(udata), 1, False)
-
+    #compressed = lzo.compress(bytes(udata), 1, False)
+    lzo = LZO()
+    #compressed = lzo.lzo1x_1_compress(bytes(udata), True)
+    compressed = lzo.lzo1x_999_compress(udata, len(udata))
     fs = open(output, 'wb+')
 
     # New data and compressed data size
